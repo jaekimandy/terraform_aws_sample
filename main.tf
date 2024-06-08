@@ -18,7 +18,7 @@ resource "aws_internet_gateway" "my_igw" {
   }
 }
 
-# Public Subnet 1
+# Public Subnet 
 resource "aws_subnet" "appublic_subnet" {
   vpc_id            = aws_vpc.my_vpc.id
   cidr_block        = "10.0.1.0/24"
@@ -63,8 +63,8 @@ resource "aws_route" "default_route" {
   gateway_id             = aws_internet_gateway.my_igw.id
 }
 
-# Route Table Association for Public Subnet 1
-resource "aws_route_table_association" "public_association_1" {
+# Route Table Association for Public Subnet 
+resource "aws_route_table_association" "public_association" {
   subnet_id      = aws_subnet.appublic_subnet.id
   route_table_id = aws_route_table.public_route_table.id
 }
@@ -119,6 +119,12 @@ resource "aws_security_group" "rds_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+  # Key Pair
+  resource "aws_key_pair" "my_keypair" {
+    key_name   = "my-keypair"
+    public_key = file("${path.module}/id_rsa.pub")
+  }
+
 
 # EC2 Instance
 resource "aws_instance" "my_ec2" {
@@ -127,6 +133,8 @@ resource "aws_instance" "my_ec2" {
   subnet_id     = aws_subnet.appublic_subnet.id
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
   associate_public_ip_address = true
+
+  key_name = aws_key_pair.my_keypair.key_name  # Associate the key pair here
 
   tags = {
     Name = "my-ec2-instance"
@@ -160,3 +168,13 @@ resource "aws_db_instance" "my_rds" {
     Name = "my-rds-instance"
   }
 }
+# Output the EC2 Instance Public IP
+  output "ec2_instance_public_ip" {
+    value = aws_instance.my_ec2.public_ip
+  }
+  
+  # Output the RDS Endpoint
+  output "rds_endpoint" {
+    value = aws_db_instance.my_rds.endpoint
+  }
+  
