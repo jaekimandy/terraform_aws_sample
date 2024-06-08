@@ -11,6 +11,7 @@ terraform_aws_sample
 8. Route Table Association for Public Subnet
 9. create a security group for ec2 for port 22 and 80
 11. create a security group for rds for port 5432
-12. Create an ec2 instance linked with the public subnet and security group for ec2
-13. Create a subnet group for RDS 
-14. create a rds database
+12. Import key-pair ( Terraform destroy doesn't remove key-pair, so it needs to be manually deleted through console)
+13. Create an ec2 instance linked with the public subnet and security group for ec2
+14. Create a subnet group for RDS 
+15. create a rds database
