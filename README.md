@@ -3,7 +3,7 @@
 o A VPC with public and private subnets   
 o An EC2 instance in the public subnet   
 o An RDS database in the private subnet   
-• Ensure that the EC2 instance has the necessary security group rules to allow inbound traffic on ports 22 (SSH) and 80 (HTTP).
+• Ensure that the EC2 instance has the necessary security group rules to allow inbound traffic on ports 22 (SSH) and 80 (HTTP).   
 • Provide the Terraform code and a brief explanation of your design choices.
 
 1. Set the region to Seoul, which is ap-northeast-2
