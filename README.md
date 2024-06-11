@@ -24,3 +24,12 @@ o An RDS database in the private subnet
 13. Create an ec2 instance linked with the public subnet and security group for ec2
 14. Create a subnet group for RDS 
 15. create a RDS database
+
+# Instructions
+1. Copy your RSA file (id_rsa.pub) in the working directory. (Over write the existing one in the directory)
+2. AWS Configure
+3. Terraform init
+4. Terraform plan
+5. Terraform apply
+6. Terraform destroy
+   
