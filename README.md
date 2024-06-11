@@ -6,6 +6,10 @@ o An RDS database in the private subnet
 • Ensure that the EC2 instance has the necessary security group rules to allow inbound traffic on ports 22 (SSH) and 80 (HTTP).   
 • Provide the Terraform code and a brief explanation of your design choices.
 
+![Brainboard - Ben](https://github.com/jaekimandy/terraform_aws_sample/assets/99704906/d6b9a9b4-ae8b-4ca7-9f9f-8629a38bc6fc)
+
+
+
 1. Set the region to Seoul, which is ap-northeast-2
 2. Create a VPC
 3. Create an Internet Gateway
