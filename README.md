@@ -43,5 +43,7 @@ o An RDS database in the private subnet
 5. Logged into the newly created EC2
 6. To test port 80:  http://<IP_Address_of_ec2>
 
+## Testing of connection between EC2 & DB
+When EC2 gets created PostgreSQL gets installed on EC2 to run Psql
 
    
