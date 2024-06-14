@@ -38,11 +38,12 @@ Execute the following commands
 
 ## Testing port 22 & 80 connection
 1. Copy your RSA file (id_rsa & id_rsa.pub) in the working directory. (Overwrite the existing one in the directory)
-2. Run your terraform
+2. Run the terraform
 3. Find the IP address of the EC2 in the terraform output 'ec2_instance_public_ip'.
-4. To test port 20: ssh ec2-user@<IP_Address_of_ec2>
-5. Logged into the newly created EC2
-6. To test port 80:  http://<IP_Address_of_ec2>
+4. To test port 20, log into the newly created EC2:
+   ssh ec2-user@<IP_Address_of_ec2>
+5. To test port 80:
+   http://<IP_Address_of_ec2>
 
 ## Testing of connection between EC2 & DB
 When EC2 gets created PostgreSQL gets installed on EC2 to run Psql
