@@ -28,12 +28,13 @@ o An RDS database in the private subnet
 16. Create an RDS database
 
 ## Instructions
-1. Copy your RSA file (id_rsa.pub) in the working directory. (Overwrite the existing one in the directory)
-2. AWS Configure
-3. Terraform init
-4. Terraform plan
-5. Terraform apply
-6. Terraform destroy
+Copy your RSA file (id_rsa.pub) in the working directory. (Overwrite the existing one in the directory)
+Execute the following commands
+1. AWS Configure
+2. Terraform init
+3. Terraform plan
+4. Terraform apply
+5. Terraform destroy
 
 ## Testing port 22 & 80 connection
 1. Copy your RSA file (id_rsa & id_rsa.pub) in the working directory. (Overwrite the existing one in the directory)
