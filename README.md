@@ -37,7 +37,7 @@ o An RDS database in the private subnet
 1. Copy your RSA file (id_rsa.pub) in the working directory. (Overwrite the existing one in the directory)
 2. Run your terraform
 3. Find the IP address of the EC2 in the terraform output 'ec2_instance_public_ip'.
-4. ssh ec2@<IP_Address_of_ec2)
+4. ssh ec2-user@<IP_Address_of_ec2)
 5. Logged into the newly created EC2
    
    
