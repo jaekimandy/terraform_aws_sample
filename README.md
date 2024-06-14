@@ -10,20 +10,22 @@ o An RDS database in the private subnet
 
 
 
-1. Set the region to Seoul, which is ap-northeast-2
-2. Create a VPC
-3. Create an Internet Gateway
-4. Create a public subnet
-5. Create 2 private subnets
-6. Create a route table
-7. Link the routing table to the Internet Gateway
-8. Route Table Association for Public Subnet
-9. Create a security group for ec2 for ports 22 and 80
+1. Copy your RSA file (id_rsa.pub) in the working directory. (Overwrite the existing one in the directory)
+2. Set the region to Seoul, which is ap-northeast-2
+3. Create a VPC
+4. Create an Internet Gateway
+5. Create a public subnet
+6. Create 2 private subnets
+7. Create a route table
+8. Link the routing table to the Internet Gateway
+9. Route Table Association for Public Subnet
+10. Create a security group for ec2 for ports 22 and 80
 11. Create a security group for rds for port 5432
-12. Import key-pair ( Terraform destroy doesn't remove key-pair, so it needs to be manually deleted through AWS console)
-13. Create an ec2 instance linked with the public subnet and security group for ec2
-14. Create a subnet group for RDS 
-15. Create an RDS database
+12. Import key-pair
+13. Install Nginx through command
+14. Create an ec2 instance linked with the public subnet and security group for ec2
+15. Create a subnet group for RDS 
+16. Create an RDS database
 
 ## Instructions
 1. Copy your RSA file (id_rsa.pub) in the working directory. (Overwrite the existing one in the directory)
@@ -33,11 +35,13 @@ o An RDS database in the private subnet
 5. Terraform apply
 6. Terraform destroy
 
-## Testing port22 connection
-1. Copy your RSA file (id_rsa.pub) in the working directory. (Overwrite the existing one in the directory)
+## Testing port 22 & 80 connection
+1. Copy your RSA file (id_rsa & id_rsa.pub) in the working directory. (Overwrite the existing one in the directory)
 2. Run your terraform
 3. Find the IP address of the EC2 in the terraform output 'ec2_instance_public_ip'.
-4. ssh ec2-user@<IP_Address_of_ec2)
+4. To test port 20: ssh ec2-user@<IP_Address_of_ec2>
 5. Logged into the newly created EC2
-   
+6. To test port 20:  http://<IP_Address_of_ec2>
+
+
    
