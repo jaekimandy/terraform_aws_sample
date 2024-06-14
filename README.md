@@ -41,7 +41,7 @@ o An RDS database in the private subnet
 3. Find the IP address of the EC2 in the terraform output 'ec2_instance_public_ip'.
 4. To test port 20: ssh ec2-user@<IP_Address_of_ec2>
 5. Logged into the newly created EC2
-6. To test port 20:  http://<IP_Address_of_ec2>
+6. To test port 80:  http://<IP_Address_of_ec2>
 
 
    
