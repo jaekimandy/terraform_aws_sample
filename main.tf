@@ -139,6 +139,21 @@ resource "aws_instance" "my_ec2" {
   tags = {
     Name = "my-ec2-instance"
   }
+  provisioner "remote-exec" {
+   inline = [
+     "sudo yum update -y",
+     "sudo yum install -y nginx",
+     "sudo systemctl start nginx",
+     "sudo systemctl enable nginx"
+   ]
+
+   connection {
+     type        = "ssh"
+     user        = "ec2-user"
+     private_key = file("${path.module}/id_rsa")
+     host        = self.public_ip
+   }
+ }
 }
 
 # RDS Subnet Group
